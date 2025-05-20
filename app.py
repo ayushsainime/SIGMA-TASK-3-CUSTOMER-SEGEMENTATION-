@@ -152,20 +152,6 @@ ax6.set_title('Elbow method to determine optimal k')
 ax6.grid(True)
 st.pyplot(fig6)
 
-# Silhouette Score Plot
-st.subheader("Silhouette Scores for Different k")
-sil_scores = []
-for k in range(2, 11):
-    km = KMeans(n_clusters=k, random_state=42, n_init=10)
-    labels_temp = km.fit_predict(df_scaled)
-    sil_scores.append(silhouette_score(df_scaled, labels_temp))
-fig7, ax7 = plt.subplots()
-ax7.plot(range(2, 11), sil_scores, marker='o')
-ax7.set_xlabel('Number of clusters')
-ax7.set_ylabel('Silhouette Score')
-ax7.set_title('Silhouette Scores')
-ax7.grid(True)
-st.pyplot(fig7)
 
 st.markdown("---")
 st.markdown("**Developed by AYUSH SAINI  2025 " ) 
